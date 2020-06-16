@@ -36,9 +36,29 @@ let keyboardData = [
         label: 'F7'
     },
     {
+        code: 119,
+        value: '010119',
+        label: 'F8'
+    },
+    {
         code: 120,
         value: '010120',
         label: 'F9'
+    },
+    {
+        code: 121,
+        value: '010121',
+        label: 'F10'
+    },
+    {
+        code: 122,
+        value: '010122',
+        label: 'F11'
+    },
+    {
+        code: 123,
+        value: '010123',
+        label: 'F12'
     },
     {
         code: 13,
@@ -46,9 +66,34 @@ let keyboardData = [
         label: 'enter'
     },
     {
+        code: 27,
+        value: '01027',
+        label: 'esc'
+    },
+    {
+        code: 32,
+        value: '01032',
+        label: 'Space' // 空格
+    },
+    {
+        code: 37,
+        value: '01037',
+        label: '←'
+    },
+    {
+        code: 38,
+        value: '01038',
+        label: '↑'
+    },
+    {
         code: 39,
         value: '01039',
         label: '→'
+    },
+    {
+        code: 40,
+        value: '01040',
+        label: '↓'
     }
 ]
 let combKeysData = [] // 组合键
