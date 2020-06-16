@@ -92,8 +92,8 @@ export const keydownCode = (value) => {
 }
 export default {
     registerKeyEvent: function (event) {
-        combKeysData = event.combKeys || [] // 组合键
-        singleKeysData = event.singleKeys || [] // 单键
+        combKeysData = Array.isArray(event.combKeys) ? event.combKeys : [] // 组合键
+        singleKeysData = Array.isArray(event.singleKeysData) ? event.singleKeys : [] // 单键
         ctrlKeyCombDate = combKeysData.filter(i => { // ctrl + 
             return i.fnKey === 'ctrl'
         })
