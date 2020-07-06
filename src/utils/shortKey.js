@@ -94,7 +94,7 @@ let keyboardData = [
         code: 40,
         value: '01040',
         label: '↓'
-    }
+    },
 ]
 let combKeysData = [] // 组合键
 let singleKeysData = [] // 单键
@@ -136,9 +136,21 @@ export const keydownCode = (value) => {
     }
 }
 export default {
-    registerKeyEvent: function (event) {
-        combKeysData = Array.isArray(event.combKeys) ? event.combKeys : [] // 组合键
-        singleKeysData = Array.isArray(event.singleKeysData) ? event.singleKeys : [] // 单键
+    registerKeyEvent: function (data) {
+        // data为对象
+        // 只需要用到组合键则只传combKeys属性值，值为数组
+        // 只需要用到单键则只传singleKeys属性值，值为数组
+        // 既需要单键，又需要组合键，则combKeys和singleKeys属性值都需要传
+        // 示例如下：
+        // data = {
+        //     combKeys: [
+        //         { code: "01013", callback: this.pulldown1, fnKey: "ctrl" },
+        //         { code: "01013", callback: this.shiftFn1, fnKey: "shift" }
+        //     ],
+        //     singleKeys: [{ code: "01013", callback: this.pulldown }]
+        // }
+        combKeysData = Array.isArray(data.combKeys) ? data.combKeys : [] // 组合键
+        singleKeysData = Array.isArray(data.singleKeysData) ? data.singleKeys : [] // 单键
         ctrlKeyCombDate = combKeysData.filter(i => { // ctrl + 
             return i.fnKey === 'ctrl'
         })

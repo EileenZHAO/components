@@ -1,8 +1,16 @@
 <template>
   <div>
+    <!-- svg引用 -->
     <svg-icon icon-class="normal"></svg-icon>
+    <!-- 图标 -->
+    <i class="iconfont icon-ico_caiwuguanli_banlichuyuan"></i>
     <Select size="small" />
     <Time />
+    <Table>
+      <template slot="table-config">
+        <button>确认</button>
+      </template>
+    </Table>
   </div>
 </template>
 
@@ -10,7 +18,8 @@
 export default {
   components: {
     Select: () => import("@/package/select/index"),
-    Time: () => import("@/package/time/index")
+    Time: () => import("@/package/time/index"),
+    Table: () => import("@/package/table/index")
   },
   mounted() {
     this.lisevent.registerKeyEvent({
