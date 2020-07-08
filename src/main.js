@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import './assets/img/icons'
 
+import htmlToPdf from '@/utils/htmlToPdf'
 import lisevent from "@/utils/shortKey";
 Vue.prototype.lisevent = lisevent
 
+Vue.use(htmlToPdf)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

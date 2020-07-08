@@ -10,6 +10,11 @@ export default new Router({
       path: '/',
       name: 'Layout',
       component: Layout
+    },
+    {
+      path: '/to-pdf',
+      name: 'ToPdf',
+      component: () => import('@/package/toPdf/index')
     }
   ]
 })
